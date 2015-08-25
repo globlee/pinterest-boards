@@ -1,7 +1,7 @@
  
 ##Pinterest-boards
 
-Web scraping with request and cheerio to get list of pinterest boards for a user.
+Web scraping with request and cheerio to get list of pinterest boards and IDs for a user.
 
 
 
@@ -15,7 +15,20 @@ var findboards = require('pinterest-boards');
 		if (err){
 
 		} else {
-			pinterest.boards = boards;
+			user.pinterest.boards = boards;
+
+			/*
+			Returned boards format (array of objects)
+
+			boards = [{
+				uri: '/display-name/board-name',
+				id:'board ID'
+			}, {
+				uri: '/display-name/board-name',
+				id:'board ID'
+			}]
+
+			 */
 		}
 	})
 
