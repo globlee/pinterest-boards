@@ -1,31 +1,23 @@
  
-##tumblr-post
+##Pinterest-boards
 
-Simple text posting to tumblr, lacking on the main API.
+Web scraping with request and cheerio to get list of pinterest boards for a user.
 
 
- ###Example usage
+
  ```js
-var tumblr-post = require('tumblr-post');
+var findboards = require('pinterest-boards');
 
 
-	
-	var myoauth = {
-		  consumer_key: ____,
-		  consumer_secret: ____,
-		  token: ___,
-		  token_secret: ___
-	};
+	//display is the user's page name, pinterest.com/XXXXX
 
-	var message = 'test';
+	findboards(display, function(err, boards){
+		if (err){
 
-	var tumblrname = 'blogname'; //The name of the blog to post to, ie XXXXX.tumblr.com
-
-	var photoUrl = 'http://test.test/test.jpg'; //photoUrl optional if image post, else null
-
-	tumblr-post(message, tumblrname, photoUrl,  myoauth, function (error, response){
-
-	});
+		} else {
+			pinterest.boards = boards;
+		}
+	})
 
 
  ```
